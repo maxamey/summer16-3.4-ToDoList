@@ -2,3 +2,42 @@
 * {
   box-sizing: border-box;
 }
+
+html {
+  background-color: rgb(245, 245, 245);
+	background-size: cover;
+}
+
+.title {
+
+}
+
+.container {
+
+}
+
+.todo {
+  box-shadow: 0 2px 3px rgb(200, 200, 200);
+  background-color: rgb(255, 255, 255);
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  width: 500px;
+
+
+}
+
+.todo__textInput {
+  border: none;
+  font-size: 20px;
+  height: 60px;
+  padding: 30px;
+  width: inherit;
+}
+
+.todo__enter {
+  height: 1px;
+  left: -9999px;
+  position: absolute;
+  width: 1px;
+
+}

@@ -2,15 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> FEE - Boilerplate </title>
-    <!-- Minimal Viable Product of your css -->
+    <title> summer16-3.4-ToDoList </title>
     <link rel="stylesheet" href="stylesheets/main.css" >
   </head>
   <body>
-    
-    <!-- Having my scripts loaded AFTER all of my content does a few things... -->
-    <!-- THIS DOES NOT ACCOMODATE FOR DOMCONTENTLOADED -->
-    <!-- This is for usability... Ensuring content has loaded (or at least started) before interaction layer -->
+    <h1 class="title"
+        data-js="title">
+        todos
+    </h1>
+    <div class="conatiner"
+         data-js="container">
+      <form class="todo"
+            action="#"
+            method="POST">
+        <input type="text"
+               placeholder="type todo item here..."
+               name="textInput"
+               class="todo__textInput"
+               data-js="todo__textInput"/>
+        <input type="submit"
+               name="submit"
+               value="ENTER"
+               class="todo__enter"
+               data-js="todo__enter"/>
+      </form>
+      <ul class="list"
+          data-js="list">
+        <li class="list__item"
+            data-js="list__item">
+
+        </li>
+
+      </ul>
+      <footer class="footer"
+              data-js="footer">
+
+      </footer>
+
+
+    </div>
     <script src="javascripts/jquery-3.1.0.js" charset="utf-8"></script>
     <script src="javascripts/main.js" charset="utf-8"></script>
   </body>
