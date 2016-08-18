@@ -16,13 +16,17 @@
          just yet)
     - [x] clear the default border
     - []
-  - [] make the list and style the items
-    - []
-    - []
-    - []
-    - []
-    - []
-    - []
+  - [x] make the list and style the items
+    - [x] width of 500px (same as others)
+    - [x] height of 60px (same as text input field -- maybe should
+         reconsider this later to give the user more definition between the published list items and the text input field)
+    - [x] padding follows suit
+    - [x] white background-color
+    - [x] grey border of 1 or 2 px - only on top and bottom
+    - [x] reset margins (issue for the ul element)
+    - [x] padding to match above (issue for the ul element)
+    - [x] line height - for centering text vertically
+    - [x] match font size
   - [x] make submit button (make this disappear
        and post the text with enter key.  http://stackoverflow.com/questions/477691/submitting-a-form-by-pressing-enter-without-a-submit-button --graceful degradation when css doesn't work! AND don't forget to prevent the submit button's default)
   - [] make the input text post to the list

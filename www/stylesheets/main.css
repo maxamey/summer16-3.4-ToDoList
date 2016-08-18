@@ -13,7 +13,7 @@ html {
 }
 
 .container {
-
+  width: 500px;
 }
 
 .todo {
@@ -28,9 +28,11 @@ html {
 
 .todo__textInput {
   border: none;
+  border-bottom: 1px solid rgb(239, 239, 239);
+  outline: none;
   font-size: 20px;
   height: 60px;
-  padding: 30px;
+  padding: 0 30px;
   width: inherit;
 }
 
@@ -40,4 +42,22 @@ html {
   position: absolute;
   width: 1px;
 
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+
+}
+
+.list__item {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(239, 239, 239);
+  font-size: 20px;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  margin: 0;
+  padding: 0 30px;
+  width: 500px;
 }
