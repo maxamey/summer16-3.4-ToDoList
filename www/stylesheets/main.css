@@ -36,12 +36,12 @@ html {
   width: inherit;
 }
 
+/*
+This hides the submit button, but it will still work when
+the user presses enter. Also is there for "graceful degradation" when css doesnt work.
+*/
 .todo__enter {
-  height: 1px;
-  left: -9999px;
-  position: absolute;
-  width: 1px;
-
+  display: none;
 }
 
 .list {
@@ -60,7 +60,11 @@ html {
   margin: 0;
   padding: 0 10px;
   width: 500px;
-  overflow: scroll;
+
+  /*
+  this creates a weird white space above the list item sections
+  */
+  /*overflow: scroll;*/
 }
 
 .list__text {
@@ -94,7 +98,7 @@ html {
 }
 
 .circle {
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgb(200, 200, 200);
   border-radius: 50%;
   display: inline-block;
   height: 20px;
@@ -103,7 +107,7 @@ html {
 }
 
 .list__item--completed .circle {
-  border: 1px solid rgb(56, 200, 115);
+  border: 0;
   background-color: rgb(56, 200, 115);
   border-radius: 50%;
   display: inline-block;

@@ -53,14 +53,9 @@ As a guest I would like to see a number of how many items are left in the todo l
   - []
 
 
-- [] As a guest I would like to complete a todo when I click the circle button next to the text
-  - []
-  - []
-  - []
-  - []
-  - []
-  - []
-  - []
-  - []
-  - []
-  - []
+- [x] As a guest I would like to complete a todo when I click the circle button next to the text
+  - [x] make circle structure
+  - [x] make circle style
+  - [x] make selected circle style
+  - [x] make the circle green when it is clicked
+  - [x] make the text of the list item strikethrough
