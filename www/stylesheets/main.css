@@ -53,25 +53,57 @@ html {
 .list__item {
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(239, 239, 239);
-  font-size: 20px;
+  font-size: 0px;
   display: inline-block;
   height: 60px;
   line-height: 60px;
   margin: 0;
-  padding: 0 30px;
+  padding: 0 10px;
   width: 500px;
+  overflow: scroll;
+}
+
+.list__text {
+  display: inline-block;
+  font-size: 20px;
+  margin: 0;
+  /* 500 - 60 for the padding of the container, the circle, and the circle's margin */
+  width: 440px;
 }
 
 .list__item--selected {
   background-color: rgb(230, 230, 230);
   border-bottom: 1px solid rgb(239, 239, 239);
-  font-size: 20px;
+  font-size: 0px;
   display: inline-block;
   height: 60px;
   line-height: 60px;
   margin: 0;
-  padding: 0 30px;
+  padding: 0 10px;
   width: 500px;
+}
+
+.list__item--complete {
+
+}
+
+.circle {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block;
+  height: 20px;
+  margin-right: 20px;
+  width: 20px;
+}
+
+.circle__selected {
+  border: 1px solid rgb(56, 200, 115);
+  background-color: rgb(56, 200, 115);
+  border-radius: 50%;
+  display: inline-block;
+  height: 20px;
+  margin-right: 20px;
+  width: 20px;
 }
 
 .footer {
