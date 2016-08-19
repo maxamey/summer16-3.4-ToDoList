@@ -83,8 +83,14 @@ html {
   width: 500px;
 }
 
-.list__item--complete {
-
+.list__item--completed .list__text {
+  color: rgb(141, 141, 141);
+  display: inline-block;
+  font-size: 20px;
+  margin: 0;
+  /* 500 - 60 for the padding of the container, the circle, and the circle's margin */
+  text-decoration: line-through;
+  width: 440px;
 }
 
 .circle {
@@ -96,7 +102,7 @@ html {
   width: 20px;
 }
 
-.circle__selected {
+.list__item--completed .circle {
   border: 1px solid rgb(56, 200, 115);
   background-color: rgb(56, 200, 115);
   border-radius: 50%;

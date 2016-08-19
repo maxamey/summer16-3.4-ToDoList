@@ -49,7 +49,7 @@ $(function(){
 
   $listEl.on("click", "[data-js='circle']", function(e){
     var $circleSelected = $(e.currentTarget);
-    $circleSelected.toggleClass("circle__selected");
+    $circleSelected.parent().toggleClass("list__item--completed");
   });
 
 
