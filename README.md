@@ -1,7 +1,7 @@
 # To Do List for To Do List!!!
 
 ##Features
-- [] As a guest I would like to see a blank todo item with a placeholder of "type todo item here" and after I type more than 2 characters I can press the return key to create the item
+- [x] As a guest I would like to see a blank todo item with a placeholder of "type todo item here" and after I type more than 2 characters I can press the return key to create the item
   - [x] make container for everything
   - [x] make form
     - [x] width of ~500px
@@ -29,13 +29,21 @@
     - [x] match font size
   - [x] make submit button (make this disappear
        and post the text with enter key.  http://stackoverflow.com/questions/477691/submitting-a-form-by-pressing-enter-without-a-submit-button --graceful degradation when css doesn't work! AND don't forget to prevent the submit button's default)
-  - [] make the input text post to the list
-  - [] only post if input text is at least 2 characters
+  - [x] make the input text post to the list
+  - [x] only post if input text is at least 2 characters
   - []
 
 - [] As a guest I would like to delete a todo when I select a todo with one click and then press the delete key
 As a guest I would like to see a number of how many items are left in the todo list
   - [] make a footer to hold the list item count
+    - [x] font size smaller than the other elements
+    - [x] width equal to other elements
+    - [x] height ~24px
+    - [x] font color 132	132	132
+    - [x] padding left/right ~20px
+    - [x] don't forget the line height
+    - [x] make element for item display count
+    - [x] clear the margins for the text
   - []
   - []
   - []

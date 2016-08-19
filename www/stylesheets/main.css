@@ -61,3 +61,18 @@ html {
   padding: 0 30px;
   width: 500px;
 }
+
+.footer {
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  width: 500px;
+
+}
+
+.footer__counter {
+  margin: 0;
+  color: rgb(132, 132, 132);
+
+}
