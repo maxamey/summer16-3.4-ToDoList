@@ -35,7 +35,7 @@
 
 - [] As a guest I would like to delete a todo when I select a todo with one click and then press the delete key
 As a guest I would like to see a number of how many items are left in the todo list
-  - [] make a footer to hold the list item count
+  - [x] make a footer to hold the list item count
     - [x] font size smaller than the other elements
     - [x] width equal to other elements
     - [x] height ~24px
@@ -44,16 +44,16 @@ As a guest I would like to see a number of how many items are left in the todo l
     - [x] don't forget the line height
     - [x] make element for item display count
     - [x] clear the margins for the text
-  - []
-  - []
-  - []
+  - [x] javascript to listen for a click on the list item to select
+  - [] then listen for a delete keypress
+  - [] delete the item selected when delete key is pressed
   - []
   - []
   - []
   - []
 
 
-- [] As a guest I would like to complete a todo when i click the circle button next to the text
+- [] As a guest I would like to complete a todo when I click the circle button next to the text
   - []
   - []
   - []

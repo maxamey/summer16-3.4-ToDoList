@@ -5,14 +5,15 @@
 $(function(){
 
   var $todoTextEl = $("[data-js='todo__textInput']");
-
   var $todoEnterEl = $("[data-js='todo__enter']");
-
   var $listEl = $("[data-js='list']");
+  var $list__itemEl = $("[data-js='list__item']");
 
-  var $list__itemEl = $("[data-js='list__item']")
-
-
+  $(document).keyup(function(e){
+    if(keyCode == 46){
+      e.removeClass("list__item--selected");
+    };
+  });
 
   $todoEnterEl.on("click", function(e){
     e.preventDefault();
@@ -31,12 +32,12 @@ $(function(){
     if($todoTextEl.val().length >= 2){
       $listEl.append(template);
     };
-
-    $list__itemEl.on("click", function(){
-      
-    });
-
-
-
   };
+
+  $listEl.on("click", "[data-js='list__item']", function(e){
+    var $selectedItem = $(e.currentTarget);
+    $selectedItem.toggleClass("list__item--selected");
+  });
+
+
 });
