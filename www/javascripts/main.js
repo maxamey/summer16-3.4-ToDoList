@@ -70,7 +70,10 @@ $(function(){
 
   //Stores the number of list items
     //Tried using .size() but there is an error thath says
-    // .size() is not a function. Is it because the li dont have anything in them
+    // .size() is not a function. Is it because the li dont have
+    // anything in them besides paragraphs? Have seemingly tried
+    // every permutaion of "$(xselector).length" etc. As it is now,
+    // I just get "0 items left" every time 😤
   var n = $listItemEl.children().length;
 
   $("[data-js='footer']").html(`
