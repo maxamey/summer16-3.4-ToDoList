@@ -10,11 +10,12 @@ $(function(){
   var $circle = $("[data-js='circle']");
   var $alertHidden = $("[data-js='alert__hidden']")
 
+  //Listens for the backspace (delete on macs) and deletes all
+  //selected list items.
   $(document).keyup(function(e){
     if(e.keyCode === 8){
       $("li.list__item--selected").remove();
-    }
-    console.log(e);
+    };
   });
 
   // Listens for the enter button to be pressed (or the submit
@@ -67,5 +68,16 @@ $(function(){
     $circleSelected.parent().toggleClass("list__item--completed");
   });
 
+  //Stores the number of list items
+    //Tried using .size() but there is an error thath says
+    // .size() is not a function. Is it because the li dont have anything in them
+  var n = $listItemEl.children().length;
+
+  $("[data-js='footer']").html(`
+    <label class="footer__counter"
+       data-js="footer__counter">
+       ${n} items left
+    </label>
+  `);
 
 });

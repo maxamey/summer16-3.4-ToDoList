@@ -10,11 +10,15 @@ html {
 }
 
 .title {
-
+  color: rgb(252, 98, 93);
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 80px;
+  margin: 0
 }
 
 .container {
-  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 4px 2px rgb(200, 200, 200);
   display: inline-block;
   font-family: Helvetica, sans-serif;
   font-weight: lighter;
@@ -24,11 +28,9 @@ html {
 
 .todo {
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 2px 4px 2px rgb(200, 200, 200);
   display: inline-block;
   font-family: Helvetica, sans-serif;
   font-weight: lighter;
-  margin-top: 30px;
   /*
   was  300 but that gave five items evenly and its wasnt
   apparent that there were more being added below
@@ -36,9 +38,8 @@ html {
   max-height: 330px;
   overflow: scroll;
   width: 500px;
-
-
 }
+
 
 .todo__textInput {
   border: none;
@@ -48,7 +49,7 @@ html {
   height: 60px;
   padding: 0 30px;
   text-align: left;
-  width: inherit;
+  width: 500px;
 }
 
 /*
@@ -138,19 +139,17 @@ the user presses enter. Also is there for "graceful degradation" when css doesnt
 
 .footer {
   background-color: rgb(245, 245, 245);
-  border-top: 1px solid rgb(239, 239, 239);
   display: inline-block;
   font-family: Helvetica, sans-serif;
   font-size: 16px;
-  height: 36px;
-  line-height: 36px;
+  height: 40px;
+  line-height: 40px;
   padding: 0 16px;
+  text-align: left;
   width: 500px;
 }
 
 .footer__counter {
   margin: 0;
   color: rgb(132, 132, 132);
-  text-align: left;
-
 }

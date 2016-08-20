@@ -28,7 +28,7 @@
     - [x] line height - for centering text vertically
     - [x] match font size
   - [x] make submit button (make this disappear
-       and post the text with enter key.  http://stackoverflow.com/questions/477691/submitting-a-form-by-pressing-enter-without-a-submit-button --graceful degradation when css doesn't work! AND don't forget to prevent the submit button's default)
+       and post the text with enter key.  http://stackoverflow.com/questions/477691/submitting-a-form-by-pressing-enter-without-a-submit-button -- "graceful degradation" when css doesn't work! AND don't forget to prevent the submit button's default)
   - [x] make the input text post to the list
   - [x] only post if input text is at least 2 characters
   - []
@@ -47,6 +47,8 @@ As a guest I would like to see a number of how many items are left in the todo l
   - [x] javascript to listen for a click on the list item to select
   - [x] then listen for a delete keypress
   - [x] delete the item selected when delete key is pressed
+  - [] interpolate the item counter in js to read the correct
+       number of items
 
 
 - [x] As a guest I would like to complete a todo when I click the circle button next to the text
