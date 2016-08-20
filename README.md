@@ -45,12 +45,8 @@ As a guest I would like to see a number of how many items are left in the todo l
     - [x] make element for item display count
     - [x] clear the margins for the text
   - [x] javascript to listen for a click on the list item to select
-  - [] then listen for a delete keypress
-  - [] delete the item selected when delete key is pressed
-  - []
-  - []
-  - []
-  - []
+  - [x] then listen for a delete keypress
+  - [x] delete the item selected when delete key is pressed
 
 
 - [x] As a guest I would like to complete a todo when I click the circle button next to the text

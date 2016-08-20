@@ -1,21 +1,21 @@
 // Main.js
-
 "use strict";
-
 $(function(){
 
   var $todoTextEl = $("[data-js='todo__textInput']");
   var $todoEnterEl = $("[data-js='todo__enter']");
   var $listEl = $("[data-js='list']");
   var $listTextEl = $("[data-js='list__text']");
-  var $list__itemEl = $("[data-js='list__item']");
+  var $listItemEl = $("[data-js='list__item']");
   var $circle = $("[data-js='circle']");
+  var $alertHidden = $("[data-js='alert__hidden']")
 
-  // $(document).keyup(function(e){
-  //   if(keyCode == 46){
-  //     e.removeClass("list__item--selected");
-  //   };
-  // });
+  $(document).keyup(function(e){
+    if(e.keyCode === 8){
+      $("li.list__item--selected").remove();
+    }
+    console.log(e);
+  });
 
   // Listens for the enter button to be pressed (or the submit
   // button to be clicked)
@@ -31,7 +31,7 @@ $(function(){
   // on the circle to complete the task, they don't also click to
   // delete.
   function submitTodo(submitString){
-    var template = `
+    var listItemTemplate = `
     <li class="list__item"
        data-js="list__item">
        <div class="circle"
@@ -46,8 +46,12 @@ $(function(){
     // Ensures the user enters at least 2 characters before they
     // publish their todo item to their list.
     if($todoTextEl.val().length >= 2){
-      $listEl.append(template);
-    }else{};
+      $listEl.append(listItemTemplate);
+    }else{
+      // Changes placeholder text to infor user that they need to
+      // enter more than one character.
+      $todoTextEl.attr("placeholder", "oops..please enter more than one character :)");
+    };
   };
 
   // Toggles the list items to be selected or deselected
