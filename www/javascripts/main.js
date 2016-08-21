@@ -16,6 +16,22 @@ $(function(){
     if(e.keyCode === 8){
       $("li.list__item--selected").remove();
     };
+    var $n = $listEl.children().length;
+    if($n == 1){
+      $("[data-js='footer']").html(`
+        <label class="footer__counter"
+           data-js="footer__counter">
+           ${$n} item left
+        </label>
+      `);
+    }else{
+      $("[data-js='footer']").html(`
+        <label class="footer__counter"
+           data-js="footer__counter">
+           ${$n} items left
+        </label>
+      `);
+    };
   });
 
   // Listens for the enter button to be pressed (or the submit
