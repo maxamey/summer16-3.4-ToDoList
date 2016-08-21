@@ -25,6 +25,24 @@ $(function(){
     var $enteredItem = $todoTextEl.val();
     submitTodo($enteredItem);
     $todoTextEl.val("");
+
+    var $n = $listEl.children().length;
+    if($n == 1){
+      $("[data-js='footer']").html(`
+        <label class="footer__counter"
+           data-js="footer__counter">
+           ${$n} item left
+        </label>
+      `);
+    }else{
+      $("[data-js='footer']").html(`
+        <label class="footer__counter"
+           data-js="footer__counter">
+           ${$n} items left
+        </label>
+      `);
+    };
+
   });
 
   // Setting up a function to inject html into the index document
@@ -68,19 +86,8 @@ $(function(){
     $circleSelected.parent().toggleClass("list__item--completed");
   });
 
-  //Stores the number of list items
-    //Tried using .size() but there is an error thath says
-    // .size() is not a function. Is it because the li dont have
-    // anything in them besides paragraphs? Have seemingly tried
-    // every permutaion of "$(xselector).length" etc. As it is now,
-    // I just get "0 items left" every time 😤
-  var n = $listItemEl.children().length;
 
-  $("[data-js='footer']").html(`
-    <label class="footer__counter"
-       data-js="footer__counter">
-       ${n} items left
-    </label>
-  `);
+
+
 
 });

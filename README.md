@@ -31,9 +31,9 @@
        and post the text with enter key.  http://stackoverflow.com/questions/477691/submitting-a-form-by-pressing-enter-without-a-submit-button -- "graceful degradation" when css doesn't work! AND don't forget to prevent the submit button's default)
   - [x] make the input text post to the list
   - [x] only post if input text is at least 2 characters
-  - []
+  - [x]
 
-- [] As a guest I would like to delete a todo when I select a todo with one click and then press the delete key
+- [x] As a guest I would like to delete a todo when I select a todo with one click and then press the delete key
 As a guest I would like to see a number of how many items are left in the todo list
   - [x] make a footer to hold the list item count
     - [x] font size smaller than the other elements
@@ -47,7 +47,7 @@ As a guest I would like to see a number of how many items are left in the todo l
   - [x] javascript to listen for a click on the list item to select
   - [x] then listen for a delete keypress
   - [x] delete the item selected when delete key is pressed
-  - [] interpolate the item counter in js to read the correct
+  - [x] interpolate the item counter in js to read the correct
        number of items
 
 
