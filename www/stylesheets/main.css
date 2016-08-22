@@ -159,3 +159,15 @@ the user presses enter. Also is there for "graceful degradation" when css doesnt
   margin: 0;
   text-align: left;
 }
+
+/* **** For the press delete message */
+
+/*.deleteMessage__hidden {
+  display: none;
+}
+
+.deleteMessage {
+  color: rgb(232, 213, 213);
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+}*/

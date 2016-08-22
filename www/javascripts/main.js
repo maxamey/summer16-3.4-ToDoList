@@ -8,7 +8,12 @@ $(function(){
   var $listTextEl = $("[data-js='list__text']");
   var $listItemEl = $("[data-js='list__item']");
   var $circle = $("[data-js='circle']");
-  var $alertHidden = $("[data-js='alert__hidden']")
+  var $alertHidden = $("[data-js='alert__hidden']");
+
+
+
+  //auto focuses the text input because clicking is annoying
+  $todoTextEl.focus();
 
   //Listens for the backspace (delete on macs) and deletes all
   //selected list items.
@@ -21,14 +26,14 @@ $(function(){
       $("[data-js='footer']").html(`
         <label class="footer__counter"
            data-js="footer__counter">
-           ${$n} item left
+           ${$n} item
         </label>
       `);
     }else{
       $("[data-js='footer']").html(`
         <label class="footer__counter"
            data-js="footer__counter">
-           ${$n} items left
+           ${$n} items
         </label>
       `);
     };
@@ -42,23 +47,26 @@ $(function(){
     submitTodo($enteredItem);
     $todoTextEl.val("");
 
+
+    //Stores the number of list items complete and incomplete
     var $n = $listEl.children().length;
+    // Adds html for the item counter; displays x item for 1 item
+    // and x items for more than that or if all are deleted
     if($n == 1){
       $("[data-js='footer']").html(`
         <label class="footer__counter"
            data-js="footer__counter">
-           ${$n} item left
+           ${$n} item
         </label>
       `);
     }else{
       $("[data-js='footer']").html(`
         <label class="footer__counter"
            data-js="footer__counter">
-           ${$n} items left
+           ${$n} items
         </label>
       `);
     };
-
   });
 
   // Setting up a function to inject html into the index document
@@ -70,7 +78,7 @@ $(function(){
     <li class="list__item"
        data-js="list__item">
        <div class="circle"
-            data-js="circle">
+            data-js="circle"> 
        </div>
        <p class="list__text"
           data-js="list__text">
@@ -82,10 +90,18 @@ $(function(){
     // publish their todo item to their list.
     if($todoTextEl.val().length >= 2){
       $listEl.append(listItemTemplate);
-    }else{
+    };
+
+    if($todoTextEl.val().length == 1){
       // Changes placeholder text to infor user that they need to
       // enter more than one character.
-      $todoTextEl.attr("placeholder", "oops..please enter more than one character :)");
+      $todoTextEl.attr("placeholder", "oops..please enter more than one character :)" );
+    }else{
+      // Chenges back to default message...originally tried this if/else as
+      // part of the previous if statement, but the placeholder
+      // stayed as the oops message. Dont know why this worked,
+      // but it did!
+      $todoTextEl.attr("placeholder", "type todo item here..." );
     };
   };
 
@@ -93,6 +109,16 @@ $(function(){
   $listEl.on("click", "[data-js='list__text']", function(e){
     var $selectedItem = $(e.currentTarget);
     $selectedItem.parent().toggleClass("list__item--selected");
+
+    // if($listEl.hasClass("list__item--selected") == true){
+    //   $("body").append(`
+    //     <h4 class="deleteMessage__hidden"
+    //         data-js="deleteMessage">
+    //       press backspace (delete) to remove selected
+    //     </h4>
+    //   `);
+    // };
+
   });
 
   // Toggles the circle (and by way of css the list text) to a
@@ -101,9 +127,5 @@ $(function(){
     var $circleSelected = $(e.currentTarget);
     $circleSelected.parent().toggleClass("list__item--completed");
   });
-
-
-
-
 
 });
