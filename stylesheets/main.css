@@ -126,6 +126,10 @@ the user presses enter. Also is there for "graceful degradation" when css doesnt
   width: 20px;
 }
 
+.fa-check {
+  font-size: 12px;
+}
+
 .list__item--completed .circle {
   border: 0;
   background-color: rgb(56, 200, 115);
