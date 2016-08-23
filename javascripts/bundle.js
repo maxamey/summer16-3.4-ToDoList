@@ -1,5 +1,37 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var $ = require('jquery');
+var clearSelected = this;
+var $listEl = $("[data-js='list']");
+
+
+clearSelected.init = function(){
+  //Listens for the backspace (delete on macs) and deletes all
+  //selected list items.
+  $(document).keyup(function(e){
+    if(e.keyCode === 8){
+      $("li.list__item--selected").remove();
+    };
+    var $n = $listEl.children().length;
+    if($n == 1){
+      $("[data-js='footer']").html(`
+        <label class="footer__counter"
+           data-js="footer__counter">
+           ${$n} item
+        </label>
+      `);
+    }else{
+      $("[data-js='footer']").html(`
+        <label class="footer__counter"
+           data-js="footer__counter">
+           ${$n} items
+        </label>
+      `);
+    };
+  });
+};
+
+},{"jquery":6}],2:[function(require,module,exports){
+var $ = require('jquery');
 var $listEl = $("[data-js='list']");
 
 var completed = this;
@@ -13,7 +45,7 @@ completed.init = function(){
   });
 };
 
-},{"jquery":5}],2:[function(require,module,exports){
+},{"jquery":6}],3:[function(require,module,exports){
 var $ = require('jquery');
 
 var item = this;
@@ -92,7 +124,7 @@ item.submitTodo = function(submitString){
   };
 };
 
-},{"jquery":5}],3:[function(require,module,exports){
+},{"jquery":6}],4:[function(require,module,exports){
 // Main.js
 
 "use strict";
@@ -100,61 +132,25 @@ item.submitTodo = function(submitString){
 var $ = require('jquery');
 var item = require('./item.js');
 var completed = require('./completed.js');
-var select = require('./remove.js');
+var select = require('./selector.js');
+var clearSelected = require('./clearSelected.js');
 
 
 $(function(){
-  var $listEl = $("[data-js='list']");
-  var $listTextEl = $("[data-js='list__text']");
-  var $listItemEl = $("[data-js='list__item']");
-  var $circle = $("[data-js='circle']");
-  var $alertHidden = $("[data-js='alert__hidden']");
-
-
-
   //auto focuses the text input because clicking is annoying
   // $todoTextEl.focus();
   completed.init();
   item.init();
   select.init();
-
-  //Listens for the backspace (delete on macs) and deletes all
-  //selected list items.
-  $(document).keyup(function(e){
-    if(e.keyCode === 8){
-      $("li.list__item--selected").remove();
-    };
-    var $n = $listEl.children().length;
-    if($n == 1){
-      $("[data-js='footer']").html(`
-        <label class="footer__counter"
-           data-js="footer__counter">
-           ${$n} item
-        </label>
-      `);
-    }else{
-      $("[data-js='footer']").html(`
-        <label class="footer__counter"
-           data-js="footer__counter">
-           ${$n} items
-        </label>
-      `);
-    };
-  });
-
-
-
-
-
+  clearSelected.init();
 });
 
-},{"./completed.js":1,"./item.js":2,"./remove.js":4,"jquery":5}],4:[function(require,module,exports){
+},{"./clearSelected.js":1,"./completed.js":2,"./item.js":3,"./selector.js":5,"jquery":6}],5:[function(require,module,exports){
 var $ = require('jquery');
-var remove = this;
-
+var select = this;
 var $listEl = $("[data-js='list']");
 
-remove.init = function(){
+select.init = function(){
   // Toggles the list items to be selected or deselected
   // Toggles the list items to be selected or deselected
   $listEl.on("click", "[data-js='list__text']", function(e){
@@ -173,7 +169,7 @@ remove.init = function(){
   });
 };
 
-},{"jquery":5}],5:[function(require,module,exports){
+},{"jquery":6}],6:[function(require,module,exports){
 /*eslint-disable no-unused-vars*/
 /*!
  * jQuery JavaScript Library v3.1.0
@@ -10249,4 +10245,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[3]);
+},{}]},{},[4]);
