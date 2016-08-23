@@ -1,9 +1,20 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+
+},{}],2:[function(require,module,exports){
+var $ = require('jquery');
+
+console.log(this);
+
+},{"jquery":4}],3:[function(require,module,exports){
 // Main.js
 
 "use strict";
 
-var $ = require("jquery");
+var $ = require('jquery');
+var item = require('./item.js');
+var completed = require('./completed.js');
+
+
 $(function(){
 
   var $todoTextEl = $("[data-js='todo__textInput']");
@@ -83,7 +94,6 @@ $(function(){
       data-js="list__item">
       <div class="circle"
             data-js="circle">
-        <i class="fa fa-check" aria-hidden="true"></i>
       </div>
       <p class="list__text"
           data-js="list__text">
@@ -127,7 +137,7 @@ $(function(){
   });
 
   // Toggles the circle (and by way of css the list text) to a
-  // taks-comleted mode with a green circle and strikethrough text.
+  // task-completed mode with a green circle and strikethrough text.
   $listEl.on("click", "[data-js='circle']", function(e){
     var $circleSelected = $(e.currentTarget);
     $circleSelected.parent().toggleClass("list__item--completed");
@@ -135,7 +145,7 @@ $(function(){
 
 });
 
-},{"jquery":2}],2:[function(require,module,exports){
+},{"./completed.js":1,"./item.js":2,"jquery":4}],4:[function(require,module,exports){
 /*eslint-disable no-unused-vars*/
 /*!
  * jQuery JavaScript Library v3.1.0
@@ -10211,4 +10221,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[1]);
+},{}]},{},[3]);
