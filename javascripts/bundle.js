@@ -13,7 +13,7 @@ completed.init = function(){
   });
 };
 
-},{"jquery":4}],2:[function(require,module,exports){
+},{"jquery":5}],2:[function(require,module,exports){
 var $ = require('jquery');
 
 var item = this;
@@ -92,7 +92,7 @@ item.submitTodo = function(submitString){
   };
 };
 
-},{"jquery":4}],3:[function(require,module,exports){
+},{"jquery":5}],3:[function(require,module,exports){
 // Main.js
 
 "use strict";
@@ -100,6 +100,7 @@ item.submitTodo = function(submitString){
 var $ = require('jquery');
 var item = require('./item.js');
 var completed = require('./completed.js');
+var select = require('./remove.js');
 
 
 $(function(){
@@ -115,6 +116,7 @@ $(function(){
   // $todoTextEl.focus();
   completed.init();
   item.init();
+  select.init();
 
   //Listens for the backspace (delete on macs) and deletes all
   //selected list items.
@@ -140,6 +142,20 @@ $(function(){
     };
   });
 
+
+
+
+
+});
+
+},{"./completed.js":1,"./item.js":2,"./remove.js":4,"jquery":5}],4:[function(require,module,exports){
+var $ = require('jquery');
+var remove = this;
+
+var $listEl = $("[data-js='list']");
+
+remove.init = function(){
+  // Toggles the list items to be selected or deselected
   // Toggles the list items to be selected or deselected
   $listEl.on("click", "[data-js='list__text']", function(e){
     var $selectedItem = $(e.currentTarget);
@@ -155,12 +171,9 @@ $(function(){
     // };
 
   });
+};
 
-
-
-});
-
-},{"./completed.js":1,"./item.js":2,"jquery":4}],4:[function(require,module,exports){
+},{"jquery":5}],5:[function(require,module,exports){
 /*eslint-disable no-unused-vars*/
 /*!
  * jQuery JavaScript Library v3.1.0
